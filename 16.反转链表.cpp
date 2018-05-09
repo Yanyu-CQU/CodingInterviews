@@ -8,26 +8,6 @@ struct ListNode
 	ListNode* next;
 	ListNode(int v = 0, ListNode* n = nullptr) : val(v), next(n) {}
 };
-
-ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) 
-{
-	if (pListHead == nullptr)
-		return nullptr;
-	ListNode* node = pListHead;
-	for (int i = 0; i < k - 1; ++i)
-	{
-		node = node->next;
-		if (node == nullptr)
-			return nullptr;
-	}
-	ListNode* kNode = pListHead;
-	while (node->next != nullptr)
-	{
-		kNode = kNode->next;
-		node = node->next;
-	}
-	return kNode;
-}
 ListNode* ReverseList(ListNode* pHead) 
 {
 	if (pHead == nullptr)
